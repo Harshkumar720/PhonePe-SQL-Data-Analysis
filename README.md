@@ -2,159 +2,289 @@
 
 ## 📌 Project Overview
 
-This project performs comprehensive **Exploratory Data Analysis (EDA)** on the PhonePe Pulse dataset using **SQL (SQLite)** and **Python**. The goal is to extract meaningful insights from digital payment data, understand user behavior, and analyze transaction trends across India.
+This project focuses on comprehensive Exploratory Data Analysis (EDA) of the PhonePe Pulse dataset using SQL (SQLite) and Python. The project analyzes large-scale digital payment data to uncover transaction trends, user behavior patterns, regional performance, and business insights across India.
+
+The entire workflow is designed using a SQL-driven analytical approach, replacing traditional CSV-based analysis with a structured and scalable database system.
 
 ---
 
-## 🎯 Problem Statement
+# 🎯 Problem Statement
 
-With the rapid adoption of digital payments, it is essential to analyze transaction patterns, user engagement, and insurance data to support better decision-making, fraud detection, and targeted business strategies.
+With the rapid growth of digital payment platforms in India, analyzing transaction data has become essential for understanding customer behavior, regional adoption trends, payment patterns, and user engagement.
 
----
-
-## 🚀 Objectives
-
-* Analyze transaction volume and value across years, states, and categories
-* Study user growth and engagement trends
-* Identify top-performing regions and categories
-* Derive business insights for strategic improvements
-* Replace traditional CSV-based analysis with **SQL-driven analytics**
+This project aims to perform data-driven analysis on PhonePe Pulse data to generate meaningful business insights that can support decision-making, strategic planning, and market analysis.
 
 ---
 
-## 🛠️ Tech Stack
+# 🚀 Project Objectives
 
-* **Python** (Pandas, NumPy)
-* **Visualization**: Matplotlib, Seaborn
-* **Database**: SQLite (SQL)
-* **Environment**: Jupyter Notebook / Google Colab
-* **Version Control**: GitHub
-
----
-
-## 🗂️ Dataset Description
-
-The dataset is sourced from the PhonePe Pulse GitHub repository and consists of structured JSON files categorized into:
-
-* **Aggregated Data**
-
-  * Transactions
-  * Users
-  * Insurance
-
-* **Map Data**
-
-  * State & district-level insights
-
-* **Top Data**
-
-  * Top states, districts, and pincodes
+* Analyze transaction volume and transaction value across years and quarters
+* Study category-wise payment behavior
+* Identify top-performing states and regions
+* Examine user growth and app engagement trends
+* Perform SQL-based aggregation and analytical querying
+* Build visual insights using interactive and statistical charts
+* Transition from CSV-based analysis to scalable SQL analytics
 
 ---
 
-## ⚙️ Project Workflow
+# 🛠️ Tech Stack
 
-### 1️⃣ Data Extraction
+### Programming & Analysis
 
-* Extracted JSON data from PhonePe repository
-* Converted structured data into Pandas DataFrames
+* Python
+* Pandas
+* NumPy
 
-### 2️⃣ SQL Integration
+### Database
+
+* SQLite
+* SQL Queries
+
+### Visualization
+
+* Matplotlib
+* Seaborn
+* Plotly
+
+### Dashboard
+
+* Streamlit
+
+### Development Environment
+
+* Jupyter Notebook
+* Google Colab
+* VS Code
+
+### Version Control
+
+* Git & GitHub
+
+---
+
+# 🗂️ Dataset Description
+
+The dataset is sourced from the official PhonePe Pulse GitHub repository and consists of structured JSON files categorized into multiple sections.
+
+### 1️⃣ Aggregated Data
+
+* Aggregated Transactions
+* Aggregated Users
+* Aggregated Insurance
+
+### 2️⃣ Map Data
+
+* State-level Data
+* District-level Data
+
+### 3️⃣ Top Data
+
+* Top States
+* Top Districts
+* Top Pincodes
+
+The dataset covers multiple years and quarters, enabling detailed trend analysis and comparative studies.
+
+---
+
+# ⚙️ Project Workflow
+
+## 1️⃣ Data Extraction
+
+* Extracted JSON data from the PhonePe Pulse repository
+* Parsed nested JSON structures
+* Converted data into structured Pandas DataFrames
+
+---
+
+## 2️⃣ SQL Integration
 
 * Created SQLite database (`phonepe.db`)
 * Stored all cleaned datasets into SQL tables
-* Replaced CSV-based workflow with SQL queries
+* Replaced CSV workflow with SQL-based querying
 
-### 3️⃣ Data Wrangling
+### SQL Tables Created
 
-* Cleaned column names and formats
-* Standardized state names
+* agg_transaction
+* agg_user
+* agg_insurance
+* map_transaction
+* map_user
+* map_insurance
+* top_transaction
+* top_user
+* top_insurance
+
+---
+
+## 3️⃣ Data Wrangling
+
+* Standardized column names
 * Converted data types
-* Removed duplicates
-* Ensured consistency across datasets
-
-### 4️⃣ Data Analysis using SQL
-
-* Used SQL queries for aggregation and transformation
-* Applied `GROUP BY`, `JOIN`, `ORDER BY`, and calculations
-
-### 5️⃣ Visualization
-
-* Built **15 analytical charts**:
-
-  * **Univariate Analysis (1–6)**
-  * **Bivariate Analysis (7–13)**
-  * **Multivariate Analysis (14–15)**
+* Cleaned and formatted state names
+* Removed duplicate records
+* Ensured consistency across all datasets
 
 ---
 
-## 📊 Key Insights
+## 4️⃣ SQL-Based Data Analysis
 
-* Significant growth in digital transactions over time
-* Certain states dominate both transaction volume and value
-* User engagement (App Opens) strongly correlates with registered users
-* High transaction count does not always mean high transaction value
-* Category-wise behavior shows varied spending patterns
+Performed analytical operations using SQL queries such as:
+
+* `SUM()`
+* `AVG()`
+* `GROUP BY`
+* `ORDER BY`
+* `LIMIT`
+* Aggregation Queries
+* Derived Metrics
+* Ranking Analysis
 
 ---
 
-## 💼 Business Use Cases
+## 5️⃣ Data Visualization
 
-* Customer segmentation based on transaction behavior
-* Fraud detection using abnormal transaction patterns
+Built 15 analytical charts for detailed insights:
+
+### 📈 Univariate Analysis
+
+1. Year-wise Total Transaction Amount
+2. Category-wise Transaction Amount
+3. Quarter-wise Transaction Count
+4. Top States by Transaction Amount
+5. Top States by Transaction Count
+6. Distribution of Transaction Amount
+
+### 📊 Bivariate Analysis
+
+7. Year vs Category-wise Transaction Amount
+8. Year vs Transaction Count
+9. States vs Average Transaction Value
+10. Category vs Average Transaction Value
+11. Top States by Registered Users
+12. Registered Users vs App Opens
+13. Top States by App Opens
+
+### 🔥 Multivariate Analysis
+
+14. Correlation Heatmap of Key Metrics
+15. Pair Plot of Key Metrics
+
+---
+
+# 📊 Key Insights
+
+* Digital transactions increased significantly between 2018 and 2024
+* Peer-to-peer payments dominate overall transaction volume
+* Maharashtra, Karnataka, and Telangana consistently rank among top-performing states
+* Registered users strongly correlate with app engagement
+* High transaction count does not always indicate high transaction value
+* Transaction behavior varies considerably across categories and regions
+
+---
+
+# 💼 Business Use Cases
+
+* Customer segmentation based on payment behavior
+* Fraud detection through abnormal transaction patterns
 * Regional marketing optimization
-* Product and feature development
-* Insurance service enhancement
-* Trend forecasting and demand prediction
+* Product and feature enhancement strategies
+* User engagement analysis
+* Insurance trend analysis
+* Demand forecasting and business intelligence
 
 ---
 
-## 🧠 SQL Usage Highlights
+# 🧠 SQL Usage Highlights
 
-* Aggregation using `SUM()`
-* Multi-column grouping (`GROUP BY`)
-* Ranking using `ORDER BY` + `LIMIT`
-* Derived metrics (Average Transaction Value)
-* Table joins for multivariate analysis
+This project extensively uses SQL for analytical processing:
+
+* Aggregation using `SUM()` and `AVG()`
+* Multi-column grouping using `GROUP BY`
+* Ranking using `ORDER BY` and `LIMIT`
+* Derived metrics calculation
+* Comparative analysis across years and states
+* SQL-driven data exploration for visualization
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
+```text
 PhonePe-SQL-Data-Analysis/
 │
-├── PhonePe_EDA_Project.ipynb   # Main analysis notebook
-├── phonepe.db                 # SQLite database
-├── README.md                  # Project documentation
+├── data/                          # Dataset files
+├── outputs/                       # Generated charts & outputs
+├── streamlit_dashboard/           # Streamlit dashboard files
+│   ├── app.py
+│   ├── requirements.txt
+│   └── phonepe.db
+│
+├── PhonePe_EDA_Project.ipynb      # Main SQL analysis notebook
+├── README.md                      # Project documentation
+├── report.pdf                     # Project report
+└── screenshots/                   # Dashboard screenshots
 ```
 
 ---
 
-## ▶️ How to Run the Project
+# ▶️ How to Run the Project
 
-1. Clone or download the repository
-2. Open the notebook in Jupyter / Colab
-3. Ensure `phonepe.db` is in the same directory
-4. Run all cells sequentially
+## 1️⃣ Clone Repository
 
----
+```bash
+git clone <repository-link>
+```
 
-## 📌 Results
+## 2️⃣ Install Dependencies
 
-* End-to-end SQL-based data analysis pipeline
-* Clear visualization of trends and patterns
-* Strong understanding of real-world payment data
-* Practical implementation of business analytics
+```bash
+pip install -r requirements.txt
+```
 
----
+## 3️⃣ Run Streamlit Dashboard
 
-## 👨‍💻 Author
-
-**Harsh Kumar**
+```bash
+streamlit run app.py
+```
 
 ---
 
-## ⭐ Final Note
+# 📌 Project Outcomes
 
-This project demonstrates the transition from basic data handling (CSV) to **structured, scalable SQL-based analytics**, making it closer to real-world industry practices.
+* Successfully built a complete SQL-based analytics pipeline
+* Performed large-scale payment trend analysis
+* Developed interactive visual dashboards
+* Generated business insights from real-world digital payment data
+* Demonstrated practical implementation of SQL in data analytics workflows
+
+---
+
+# 🌐 Streamlit Dashboard
+
+The project also includes an interactive Streamlit dashboard for real-time data exploration and visualization.
+
+Dashboard Features:
+
+* Interactive filters
+* Dynamic charts
+* KPI cards
+* State-wise analysis
+* User analytics
+* Transaction insights
+
+---
+
+# 👨‍💻 Author
+
+### Harsh Kumar
+
+Aspiring Data Analyst | SQL Enthusiast | Python Developer
+
+---
+
+# ⭐ Final Note
+
+This project demonstrates the transformation of raw JSON payment data into structured SQL-based analytics and interactive visual insights. It reflects real-world industry practices involving database management, analytical querying, business intelligence, and dashboard development.
+
