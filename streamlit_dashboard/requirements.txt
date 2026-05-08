@@ -1,0 +1,8 @@
+streamlit==1.45.1
+pandas==2.2.3
+plotly==6.0.1
+sqlalchemy==2.0.41
+numpy==2.2.5
+matplotlib==3.10.3
+seaborn==0.13.2
+streamlit-option-menu==0.4.0
